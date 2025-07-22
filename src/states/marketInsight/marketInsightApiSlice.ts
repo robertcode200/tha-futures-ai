@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 type DateString = `${string & { __brand: "\\d{4}-\\d{2}-\\d{2}" }}`;
-type ResponseLatestTradeDates = { date: DateString }[];
+type ResponseLatestTradeDates = { date: DateString }[] | undefined;
 type TransformedLatestTradeDates = { dateString: DateString, unixTimestampSeconds: number }[];
 
 export const marketInsightApiSlice = createApi({
@@ -16,7 +16,7 @@ export const marketInsightApiSlice = createApi({
         query: ({ size }) =>
           `api/market_info/latest_trade_dates?size=${size}`,
         transformResponse: (response: ResponseLatestTradeDates) => {
-          if (response.length === 0) return [];
+          if (!response || response.length === 0) return [];
           return response.map(({ date }) => ({
             dateString: date,
             unixTimestampSeconds: Math.floor(new Date(date).getTime() / 1000),
