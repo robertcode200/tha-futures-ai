@@ -1,8 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-type DateString = `${string & { __brand: "\\d{4}-\\d{2}-\\d{2}" }}`;
-type ResponseLatestTradeDates = { date: DateString }[] | undefined;
-type TransformedLatestTradeDates = { dateString: DateString, unixTimestampSeconds: number }[];
+import type {
+  UnixTimestampSeconds,
+  ResponseLatestTradeDates,
+  TransformedLatestTradeDates,
+  ResponseChipUnifyTable,
+  TransformedChipUnifyTable,
+} from "./types";
 
 export const marketInsightApiSlice = createApi({
   reducerPath: "marketInsight",
@@ -23,8 +26,18 @@ export const marketInsightApiSlice = createApi({
           }));
         }
       }),
+
+      // ## chip ##
+      getChipUnifyTable: builder.query<TransformedChipUnifyTable, { from: UnixTimestampSeconds; to: UnixTimestampSeconds }>({
+        query: ({ from, to }) =>
+          `api/chip/unify_table?from=${from}&to=${to}`,
+        transformResponse: (response: ResponseChipUnifyTable) => {
+          if (!response) return null;
+          return response;
+        }
+      }),
     };
   },
 });
 
-export const { useGetLatestTradeDatesQuery } = marketInsightApiSlice;
+export const { useGetLatestTradeDatesQuery, useGetChipUnifyTableQuery } = marketInsightApiSlice;
