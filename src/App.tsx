@@ -1,8 +1,12 @@
+import TestComponent from '@/components/TestComponent';
 import './App.css';
 
 const App = () =>{
   return (
-    <div>App</div>
+    <div>
+      <h1>App</h1>
+      <TestComponent />
+    </div>
   );
 };
 
