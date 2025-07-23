@@ -3,10 +3,10 @@
 ## todo
 - DailyChipsPage
   - [ ] ChipCard
-    - [ ] ChipCard draft
-    - [ ] ChipCardBarChart
-    - [ ] TODO: remove mockChipData
+    - [x] ChipCard draft
+    - [x] ChipCardBarChart
     - [ ] Complete ChipCard
+    - [ ] TODO: remove mockChipData
   - [ ] ChipCardGroup
   - [ ] extract config
   - [ ] checks
@@ -28,6 +28,7 @@
       - // why not HOC?
 - others
   - [ ] RTK Query Cache System
+  - [ ] Tune Chart Details
   - [ ] make ChipCard a compound component
   - [ ] make TabGroup a compound component
   - [ ] bug report
@@ -35,7 +36,9 @@
   - [ ] Testing 
     - // didn't think to much this time, cuz the focus is more on showing the capability of implementing features
   - [ ] chores
+    - [ ] TODO: pull out configs into separate config files
     - [ ] TODO: chipName as const enum
+    - [ ] TODO: convert date format to MM/DD in ChipCardBarChart
     - [ ] TODO: latestOiDiffUnit
 - Other Pages
   - ...

@@ -1,3 +1,6 @@
-export const getValueColor = (value: number): string => {
-  return value < 0 ? '#009900' : '#F11F1F';
+const upColorHex = '#F11F1F';
+const downColorHex = '#009900';
+
+export const getValueUpDownColor = (value: number): string => {
+  return value > 0 ? upColorHex : downColorHex;
 };

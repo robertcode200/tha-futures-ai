@@ -3,10 +3,36 @@ import ChipCard from '../ChipCard';
 
 // TODO: remove mockChipData
 const mockChipData = {
-  dealer_mxf: {
-    net_oi_volume: [-2001, -394, 2140, 3068, 2409, 2135, 594, 1553],
-    oi_diff: [-1157, 1607, 2534, 928, -659, -274, -1541, 959]
-  },
+  dealer_mxf: [
+      {
+        date: '2025-07-15',
+        oiDiff: 1607,
+      },
+      {
+        date: '2025-07-16',
+        oiDiff: 2534,
+      },
+      {
+        date: '2025-07-17',
+        oiDiff: 928,
+      }
+      ,{
+        date: '2025-07-18',
+        oiDiff: -659,
+      },
+      {
+        date: '2025-07-21',
+        oiDiff: -274,
+      },
+      {
+        date: '2025-07-22',
+        oiDiff: -1541,
+      },
+      {
+        date: '2025-07-23',
+        oiDiff: 959,
+      },
+  ],
 };
 
 const ChipOverview: React.FC = () => {
@@ -18,7 +44,7 @@ const ChipOverview: React.FC = () => {
       <p>This is the chip overview component.</p>
       <ChipCard 
         chipName={chipName}
-        chipData={mockChipData[chipName]}
+        oiDiffByDates={mockChipData[chipName]}
       />
     </div>
   );
