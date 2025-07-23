@@ -5,7 +5,6 @@ import {
   Bar,
   XAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   Cell,
 } from "recharts";
@@ -29,7 +28,7 @@ const ChipCardBarChart = ({
   const { barCharWidth, barChartHeight } = chipCardBarChartConfig;
   // TODO: convert date format to MM/DD
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" style={{ background: '#f5f5f5' }}>
       <BarChart width={barCharWidth} height={barChartHeight} data={oiDiffByDates}>
         <Bar dataKey="oiDiff">
           {oiDiffByDates.map((oiDiffByDate, index) => (
