@@ -37,6 +37,7 @@
     - // didn't think to much this time, cuz the focus is more on showing the capability of implementing features
   - [ ] chores
     - [ ] TODO: pull out configs into separate config files
+    - [ ] TODO: ChipCardBarChart tooltip
     - [ ] TODO: chipName as const enum
     - [ ] TODO: convert date format to MM/DD in ChipCardBarChart
     - [ ] TODO: latestOiDiffUnit
