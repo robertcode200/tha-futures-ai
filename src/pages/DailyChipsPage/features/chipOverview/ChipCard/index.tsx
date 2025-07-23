@@ -2,7 +2,7 @@ import type { ChipData } from '@/states/marketInsight/types';
 import { getValueColor } from '@/utils';
 
 import './chipCard.scss'
-interface ChipCardProps {
+type ChipCardProps ={
   chipName: string; // TODO: chipName as const enum
   chipData: ChipData;
 };
