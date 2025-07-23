@@ -30,9 +30,14 @@ export const marketInsightApiSlice = createApi({
       }),
 
       // ## chip ##
-      getChipUnifyTable: builder.query<TransformedChipUnifyTable, { from: UnixTimestampSeconds; to: UnixTimestampSeconds }>({
-        query: ({ from, to }) =>
-          `api/chip/unify_table?from=${from}&to=${to}`,
+      getChipUnifyTable: builder.query<TransformedChipUnifyTable, { from?: UnixTimestampSeconds; to?: UnixTimestampSeconds }>({
+        query: ({ from, to }) => {
+          const params = new URLSearchParams();
+          if (from !== undefined) params.append('from', from.toString());
+          if (to !== undefined) params.append('to', to.toString());
+          const queryString = params.toString();
+          return `api/chip/unify_table${queryString ? `?${queryString}` : ''}`;
+        },
         transformResponse: (response: ResponseChipUnifyTable) => {
           if (!response) return null;
           
