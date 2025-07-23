@@ -5,6 +5,7 @@
   - [ ] ChipCard
     - [ ] ChipCard draft
     - [ ] ChipCardBarChart
+    - [ ] TODO: remove mockChipData
     - [ ] Complete ChipCard
   - [ ] ChipCardGroup
   - [ ] extract config
@@ -33,5 +34,8 @@
   - [ ] enhancement report
   - [ ] Testing 
     - // didn't think to much this time, cuz the focus is more on showing the capability of implementing features
+  - [ ] chores
+    - [ ] TODO: chipName as const enum
+    - [ ] TODO: latestOiDiffUnit
 - Other Pages
   - ...
