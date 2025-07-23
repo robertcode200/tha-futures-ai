@@ -11,12 +11,12 @@ type ChipCardProps ={
 };
 
 const getLatestOiDiffText = (latestOiDiff: number) => {
-  const latestOiDiffUpDown = latestOiDiff > 0 ? '+' : '-';
+  const latestOiDiffUpPrefix = latestOiDiff > 0 ? '+' : '';
 
   // TODO: latestOiDiffUnit
   const latestOiDiffUnit = '';
 
-  return `${latestOiDiffUpDown}${latestOiDiff}${latestOiDiffUnit}`;
+  return `${latestOiDiffUpPrefix}${latestOiDiff}${latestOiDiffUnit}`;
 };
 
 const ChipCard = ({ chipName, oiDiffByDates }: ChipCardProps) => {

@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type {
-  UnixTimestampSeconds,
   ResponseLatestTradeDates,
   TransformedLatestTradeDates,
   ResponseChipUnifyTable,
   TransformedChipUnifyTable,
   ChipData,
+  DateString,
 } from "./types";
 import { chipDataFields } from "./config";
 
@@ -30,17 +30,21 @@ export const marketInsightApiSlice = createApi({
       }),
 
       // ## chip ##
-      getChipUnifyTable: builder.query<TransformedChipUnifyTable, { from?: UnixTimestampSeconds; to?: UnixTimestampSeconds }>({
-        query: ({ from, to }) => {
-          const params = new URLSearchParams();
-          if (from !== undefined) params.append('from', from.toString());
-          if (to !== undefined) params.append('to', to.toString());
-          const queryString = params.toString();
-          return `api/chip/unify_table${queryString ? `?${queryString}` : ''}`;
+      getChipUnifyTable: builder.query<TransformedChipUnifyTable | null, void>({
+        query: (
+          // TODO: supple
+          // { from, to }
+        ) => {
+          // const params = new URLSearchParams();
+          // if (from !== undefined) params.append('from', from.toString());
+          // if (to !== undefined) params.append('to', to.toString());
+          // const queryString = params.toString();
+          // return `api/chip/unify_table${queryString ? `?${queryString}` : ''}`;
+          return 'api/chip/unify_table';
         },
-        transformResponse: (response: ResponseChipUnifyTable) => {
+        transformResponse: (response: ResponseChipUnifyTable): TransformedChipUnifyTable | null => {
           if (!response) return null;
-          
+
           // Filter to keep only ChipData fields
           const filteredData: Record<string, ChipData> = {};
           
@@ -49,8 +53,20 @@ export const marketInsightApiSlice = createApi({
               filteredData[field] = response[field as keyof ResponseChipUnifyTable] as ChipData;
             }
           });
-          
-          return filteredData;
+
+          const chipDataKeys = Object.keys(filteredData);
+          const date = response.date;
+
+          const transformedData: Record<string, { date: DateString, oiDiff: number }[]> = {};
+
+          chipDataKeys.forEach((key) => {
+            transformedData[key] = filteredData[key].oi_diff.map((oiDiff, index) => ({
+              date: date[index],
+              oiDiff: oiDiff,
+            }));
+          });
+
+          return transformedData;
         }
       }),
     };

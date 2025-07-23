@@ -40,7 +40,7 @@ export type TradingValueData = {
   trading_value_diff: TradingValueDiff[];
 };
 
-export type ResponseChipUnifyTable = undefined | {
+export type ChipUnifyTable = {
   t: UnixTimestampSeconds[];
   date: DateString[];
   foreigner_txf: ChipData;
@@ -71,5 +71,6 @@ export type ResponseChipUnifyTable = undefined | {
   large_trader_options_last5: ChipData;
 };
 
-// TODO: complete this type
-export type TransformedChipUnifyTable = unknown; 
+export type ResponseChipUnifyTable = undefined | ChipUnifyTable;
+
+export type TransformedChipUnifyTable = Record<string, { date: DateString, oiDiff: number }[]>;

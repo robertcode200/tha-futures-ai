@@ -5,8 +5,8 @@
   - [ ] ChipCard
     - [x] ChipCard draft
     - [x] ChipCardBarChart
-    - [ ] Complete ChipCard
-    - [ ] TODO: remove mockChipData
+    - [x] Complete ChipCard
+    - [x] TODO: remove mockChipData
   - [ ] ChipCardGroup
   - [ ] extract config
   - [ ] checks
@@ -29,6 +29,7 @@
 - others
   - [ ] RTK Query Cache System
   - [ ] Tune Chart Details
+  - [ ] TODO: supply from, to in getChipUnifyTable
   - [ ] make ChipCard a compound component
   - [ ] make TabGroup a compound component
   - [ ] bug report

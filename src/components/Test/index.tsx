@@ -18,7 +18,8 @@ const Test = () => {
 
     // Use skip flag to only fire when we have both timestamps
     const { data: chipData, isLoading: isChipLoading, error: chipError } = useGetChipUnifyTableQuery(
-        { from: fromTimestamp!, to: toTimestamp! },
+        // { from: fromTimestamp!, to: toTimestamp! },
+        undefined,
         { 
             skip: !fromTimestamp || !toTimestamp || isTradeDatesLoading 
         }
