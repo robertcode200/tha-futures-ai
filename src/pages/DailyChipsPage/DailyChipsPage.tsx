@@ -1,6 +1,6 @@
 
-import ChipOverview from "./features/chipOverview";
-import ChipCarryOver from "./features/chipCarryOver";
+import ChipOverview from "./features/chipOverview/ChipOverview";
+import ChipCarryOver from "./features/chipCarryOver/ChipCarryOver";
 
 const DailyChipsPage = () => {
   return (
@@ -13,4 +13,4 @@ const DailyChipsPage = () => {
   );
 };
 
-export default DailyChipsPage; 
+export default DailyChipsPage;

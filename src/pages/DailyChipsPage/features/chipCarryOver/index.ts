@@ -1,1 +1,1 @@
-export { default } from './ChipCarryOver';
+export { default as ChipCarryOver } from './ChipCarryOver';
