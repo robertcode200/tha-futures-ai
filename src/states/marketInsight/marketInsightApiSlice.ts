@@ -5,7 +5,9 @@ import type {
   TransformedLatestTradeDates,
   ResponseChipUnifyTable,
   TransformedChipUnifyTable,
+  ChipData,
 } from "./types";
+import { chipDataFields } from "./config";
 
 export const marketInsightApiSlice = createApi({
   reducerPath: "marketInsight",
@@ -33,7 +35,17 @@ export const marketInsightApiSlice = createApi({
           `api/chip/unify_table?from=${from}&to=${to}`,
         transformResponse: (response: ResponseChipUnifyTable) => {
           if (!response) return null;
-          return response;
+          
+          // Filter to keep only ChipData fields
+          const filteredData: Record<string, ChipData> = {};
+          
+          chipDataFields.forEach(field => {
+            if (response[field as keyof ResponseChipUnifyTable]) {
+              filteredData[field] = response[field as keyof ResponseChipUnifyTable] as ChipData;
+            }
+          });
+          
+          return filteredData;
         }
       }),
     };
