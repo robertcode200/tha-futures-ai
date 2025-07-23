@@ -37,7 +37,6 @@ const ChipCardBarChart = ({
           ))}
         </Bar>
         <Tooltip />
-        <Legend />
         <XAxis dataKey="date" />
       </BarChart>
     </ResponsiveContainer>
