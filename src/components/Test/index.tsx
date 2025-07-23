@@ -5,7 +5,7 @@ import {
 import { useSelector } from 'react-redux';
 import { createSlicedTradeDatesSelector } from "@/states/marketInsight/marketInsightSelectors";
 
-const TestComponent = () => {
+const Test = () => {
     // Get the latest trade dates
     const { data: latestTradeDates, isLoading: isTradeDatesLoading, error: tradeDatesError } = useGetLatestTradeDatesQuery({ size: 30 });
     
@@ -78,4 +78,4 @@ const TestComponent = () => {
     );
 };
 
-export default TestComponent;
+export default Test;
