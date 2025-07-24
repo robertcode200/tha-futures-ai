@@ -14,6 +14,7 @@
   - 印象中您提到使用 rtk query 做 api 存取的控管
 
 ## structure
+```
 src/
 ├── pages/
 │   └── DailyChipsPage/
@@ -36,6 +37,7 @@ src/
 ├── main.tsx
 ├── utils.ts
 └── vite-env.d.ts
+```
 - description
   - [apis/services] 兩隻 api by domain 放在 states/ 底下，分別為 futuresOp and marketInsight，可進一步進入 api slice 查閱 相關的 endpoints 及 處理
   - 目前只做 Daily Chips Page
