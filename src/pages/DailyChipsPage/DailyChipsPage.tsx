@@ -1,5 +1,5 @@
-import ChipOverview from "./features/chipOverview/ChipOverview";
-import ChipCarryOver from "./features/chipCarryOver/ChipCarryOver";
+import ChipOverview from "./tabContents/chipOverview/ChipOverview";
+import ChipCarryOver from "./tabContents/chipCarryOver/ChipCarryOver";
 import NavGroup from "./NavGroup";
 
 const DailyChipsPage = () => {

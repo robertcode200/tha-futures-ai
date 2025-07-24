@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import ChipCarryOver from '../features/chipCarryOver/ChipCarryOver';
-import ChipOverview from '../features/chipOverview/ChipOverview';
+import ChipCarryOver from '../tabContents/chipCarryOver/ChipCarryOver';
+import ChipOverview from '../tabContents/chipOverview/ChipOverview';
 
 import './navGroup.scss';
 
