@@ -21,7 +21,6 @@ const ChipOverview = () => {
   return (
     <div>
       <h2>Chip Overview</h2>
-      <p>This is the chip overview component.</p>
       <div className='chip-cards-container'>
         {
           Object.keys(data).map((chipName) => {
