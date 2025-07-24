@@ -1,6 +1,6 @@
-
 import ChipOverview from "./features/chipOverview/ChipOverview";
 import ChipCarryOver from "./features/chipCarryOver/ChipCarryOver";
+import NavGroup from "./NavGroup";
 
 const DailyChipsPage = () => {
   return (
@@ -9,6 +9,7 @@ const DailyChipsPage = () => {
       <p>This is the daily chips page component.</p>
       <ChipOverview />
       <ChipCarryOver />
+      <NavGroup />
     </div>
   );
 };

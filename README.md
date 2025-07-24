@@ -2,19 +2,19 @@
 
 ## todo
 - DailyChipsPage
-  - [ ] ChipCard
+  - [x] ChipCard
     - [x] ChipCard draft
     - [x] ChipCardBarChart
     - [x] Complete ChipCard
     - [x] TODO: remove mockChipData
-  - [ ] ChipCardGroup
+  - [x] ChipCardGroup
   - [ ] extract config
   - [ ] checks
     - [ ] check fallbacks
     - [ ] check error handlings
     - [ ] check edge cases i.e. the case [get not data]
-  - [ ] TabGroup
-    - [ ] Layout of [Tab and Content]
+  - [x] TabGroup
+    - [x] Layout of [Tab and Content]
   - 留倉籌碼 Content
     - apis/services
     - tab group
