@@ -1,5 +1,7 @@
 import { useGetSymbolHistoryQuery } from '@/states/futuresOp/futuresOpApiSlice';
 
+import './chipCarryOver.scss';
+
 const ChipCarryOver = () => {
   const { data, isLoading, error } = useGetSymbolHistoryQuery();
 
@@ -22,12 +24,26 @@ const ChipCarryOver = () => {
         {data.bars.length > 0 && (
           <div className="latest-bar-info">
             <h4>台指期(日盤)</h4>
-            <p>時間: {new Date(data.bars[data.bars.length - 1].time).toLocaleString()}</p>
-            <p>開盤: {data.bars[data.bars.length - 1].open}</p>
-            <p>最高: {data.bars[data.bars.length - 1].high}</p>
-            <p>最低: {data.bars[data.bars.length - 1].low}</p>
-            <p>收盤: {data.bars[data.bars.length - 1].close}</p>
-            <p>Volume: {data.bars[data.bars.length - 1].volume}</p>
+            {/* <p>時間: {new Date(data.bars[data.bars.length - 1].time).toLocaleString()}</p> */}
+            <p className='volume'>{data.bars[data.bars.length - 1].volume}</p>
+            <div className="info-value-container">
+              <p>
+                <div className='title'>開盤</div> 
+                <div className='value'>{data.bars[data.bars.length - 1].open}</div>
+              </p>
+              <p>
+                <div className='title high'>最高</div> 
+                <div className='value'>{data.bars[data.bars.length - 1].high}</div>
+              </p>
+              <p>
+                <div className='title low'>最低</div> 
+                <div className='value'>{data.bars[data.bars.length - 1].low}</div>
+              </p>
+              <p>
+                <div className='title'>收盤</div> 
+                <div className='value'>{data.bars[data.bars.length - 1].close}</div>
+              </p>
+            </div>            
           </div>
         )}
       </div>
